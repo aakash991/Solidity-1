@@ -145,7 +145,7 @@ library BTTSLib {
     // Initialisation
     // ------------------------------------------------------------------------
     function init(Data storage self, address owner, string symbol, string name, uint8 decimals, uint initialSupply, bool mintable, bool transferable) public {
-        require(self.owner == address(0));
+        require(self.owner == address(0));//第一次激活
         self.owner = owner;
         self.symbol = symbol;
         self.name = name;
@@ -787,4 +787,4 @@ contract BTTSTokenFactory is Owned {
     // ------------------------------------------------------------------------
     function () public payable {
         revert();
-    }
+    }}
